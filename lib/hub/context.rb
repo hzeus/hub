@@ -261,7 +261,7 @@ module Hub
             path = '/wiki' + path
           end
         end
-        "https://#{host}/" + project_name + path.to_s
+        "http://#{host}/" + project_name + path.to_s
       end
 
       def git_url(options = {})

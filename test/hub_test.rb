@@ -370,14 +370,14 @@ class HubTest < Test::Unit::TestCase
   def test_hub_browse_ssh_alias
     with_ssh_config "Host gh\n User git\n HostName github.com" do
       stub_repo_url "gh:singingwolfboy/sekrit.git"
-      assert_command "browse", "open https://github.com/singingwolfboy/sekrit"
+      assert_command "browse", "open http://github.com/singingwolfboy/sekrit"
     end
   end
 
   def test_hub_browse_ssh_github_alias
     with_ssh_config "Host github.com\n HostName ssh.github.com" do
       stub_repo_url "git@github.com:suan/git-sanity.git"
-      assert_command "browse", "open https://github.com/suan/git-sanity"
+      assert_command "browse", "open http://github.com/suan/git-sanity"
     end
   end
 
@@ -512,7 +512,7 @@ class HubTest < Test::Unit::TestCase
     end
 
     def assert_browser(browser)
-      assert_command "browse", "#{browser} https://github.com/defunkt/hub"
+      assert_command "browse", "#{browser} http://github.com/defunkt/hub"
     end
 
     def with_host_os(value)
